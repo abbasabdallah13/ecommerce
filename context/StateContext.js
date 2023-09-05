@@ -46,7 +46,6 @@ const onRemove = (item,id) => {
     setCartItems(newCartItems);
     setTotalPrice((prev) => prev - item.price*item.quantity);
     setTotalQuantities((prev) => prev - item.quantity);
-    console.log(newCartItems, totalPrice, totalQuantities);
 
 }
 
@@ -54,7 +53,6 @@ const toggleCartItemQuantity = (id,value) => {
     foundProduct = cartItems.find(item => item._id === id);
     index = cartItems.findIndex(product => product._id === id);
     let newCartItems;
-    console.log(foundProduct);
     if(value === 'inc' && foundProduct){
         foundProduct.quantity = foundProduct.quantity+1;
         let newCartItems = cartItems.filter(item => item._id !== id);
